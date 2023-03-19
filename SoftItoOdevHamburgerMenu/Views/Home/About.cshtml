@@ -1,0 +1,228 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+
+
+<head>
+    <style>
+
+        .TextBoxWrong {
+           border: 2px solid red;
+           border-radius : 5px;
+
+        }
+
+        #Govde {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            color: #e2faf7;
+        }
+
+        .Colon {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+            color: black;
+        }
+
+        .TableRow {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: large;
+            color: black;
+        }
+
+
+        Body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            color: cadetblue;
+        }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 25px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@*@media /*screen and (max-height: 450px) {*/
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}*@
+    </style>
+
+
+</head>
+
+
+<body id="Govde" style="background-color :#c6e9dc ; padding-top:200px;">
+
+
+
+    <div class="form-control" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif  ; font-size:larger; border : solid 3px cadetblue ; border-radius:8px; height:max-content  ">
+        <h3 class="col-lg-10" style="padding-left:450px ; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:black;"> Biz Kimiz </h3>
+
+        <br />
+        <br />
+        <br />
+
+        <ol style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:large">
+            <li>    Günümüz gençlerine geleceğin yetkinliklerini kazandırmak    </li>
+            <li>
+                    Eğitim durumu yaş maddi imkanlar ve benzeri kısıtlara takılmaksızın ön elemelerin tüm gençlerimize açık olduğu  tam bir fırsat eşitliği sunmak
+            </li>
+
+            <li>
+                    Eğitim sonunda elde edilecek yetkinlikler ile gençlerimizin iş gücüne katılımını kolaylaştırmak
+            </li>
+
+            <li>  Yazılım - bilişim ekosistemine güçlü bir insan kaynağı girdisi sağlamak     </li>
+            <li>  Ülkemiz yazılım ihracatı stratejisi hedefleri doğrultusunda hizmet vermek     </li>
+
+        </ol>
+
+       
+        @*<div class="active" style="font-size: larger;   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: cadetblue;">*@
+        @*<form action="/" method="post">
+
+            <table>
+
+                <tr>
+                    <td>
+                        <div>
+                            <label for="username" class="form-label">Kullanıcı Adı</label>
+                            <input type="text" class="form-control" id="TxtUsername" placeholder="Kullanıcı adı ">  <br />
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>
+
+                            <label class="form-label" for="password-input">Şifre</label><br />
+                            <div>
+                                <input type="password" class="form-control" placeholder="Şifre " id="TxtPassword">
+                            </div>
+                            <div>
+                                <a href="#">Şifremi Unuttum?</a>
+                            </div><br />
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>
+                            <button class="btn btn-success w-100" type="button" onclick="Login();" id="BtnLogin">Giriş</button>
+                        </div><br />
+                    </td>
+
+                </tr>
+
+
+            </table>
+
+        </form>*@
+
+
+        @*</div>*@
+
+
+    </div>
+
+
+
+    </div>
+    <label style="display:none; color:black; padding-left:100px" id="AlrtKullaniciAdi"> Kullanıcı Adı veya Şifre Hatalı </label>
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("YanMenu").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "50px";
+            document.getElementById("Ac").style.display = "none";
+            document.getElementById("Kapa").style.display = "none";
+
+
+        }
+
+        function closeNav() {
+            document.getElementById("YanMenu").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("Kapa").style.display = "none";
+            document.getElementById("Ac").style.display = "block";
+        }
+
+        function closeNavInside() {
+            document.getElementById("YanMenu").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("Kapa").style.display = "none";
+            document.getElementById("Ac").style.display = "block";
+        }
+
+
+        function Login() {
+            var KullaniciAdi = document.getElementById("TxtUsername").value;
+            var Sifre = document.getElementById("TxtPassword").value;
+            var AlertKullaniciAdi = document.getElementById("AlrtKullaniciAdi");
+
+
+
+            if (KullaniciAdi == "" || Sifre == "") {
+                alert("Kullanıcı veya şifre  boş olamaz");
+                AlertKullaniciAdi.style.display = "block";
+                document.getElementById("TxtUsername").className = "TextBoxWrong";
+                document.getElementById("TxtPassword").className = "TextBoxWrong";
+            };
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+
